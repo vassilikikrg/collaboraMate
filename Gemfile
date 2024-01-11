@@ -33,6 +33,8 @@ gem 'popper_js', '~> 2.11.6'
 #Jquery
 gem 'jquery-rails'
 
+gem 'devise'
+
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -73,3 +75,5 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+
