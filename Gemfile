@@ -30,6 +30,7 @@ gem "jbuilder"
 gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sassc-rails', '>= 2.1.0'
 gem 'popper_js', '~> 2.11.6'
+gem 'bootstrap_form'
 #Jquery
 gem 'jquery-rails'
 
