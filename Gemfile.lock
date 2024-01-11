@@ -84,10 +84,9 @@ GEM
     bindex (0.8.1)
     bootsnap (1.17.0)
       msgpack (~> 1.2)
-    bootstrap (5.0.2)
-      autoprefixer-rails (>= 9.1.0)
-      popper_js (>= 2.9.2, < 3)
-      sassc-rails (>= 2.0.0)
+    bootstrap-sass (3.4.1)
+      autoprefixer-rails (>= 5.2.1)
+      sassc (>= 2.0.0)
     builder (3.2.4)
     capybara (3.39.2)
       addressable
@@ -219,8 +218,6 @@ GEM
     rexml (3.2.6)
     ruby2_keywords (0.0.5)
     rubyzip (2.3.2)
-    sass-rails (6.0.0)
-      sassc-rails (~> 2.1, >= 2.1.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -276,7 +273,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
-  bootstrap (~> 5.0.0)
+  bootstrap-sass (~> 3.4.1)
   capybara
   debug
   importmap-rails
@@ -286,7 +283,7 @@ DEPENDENCIES
   popper_js (~> 2.11.6)
   puma (>= 5.0)
   rails (~> 7.1.2)
-  sass-rails (~> 6.0.0)
+  sassc-rails (>= 2.1.0)
   selenium-webdriver
   sprockets-rails
   stimulus-rails
