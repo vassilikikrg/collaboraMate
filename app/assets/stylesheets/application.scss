@@ -6,3 +6,13 @@
 
 // Partials - main css files
 @import "partials/layout/*";
+
+// Partials - main css files
+@import "partials/*";
+@import "partials/layout/*";
+
+// Variables
+@import "base/variables";
+
+// Default styles
+@import "base/default";
