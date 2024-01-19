@@ -80,6 +80,7 @@ group :test do
   gem 'headless'
   gem 'capybara'
   gem 'poltergeist'
+  gem 'phantomjs'
   gem 'database_cleaner'
   gem "selenium-webdriver"
 end

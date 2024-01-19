@@ -192,6 +192,7 @@ GEM
       racc (~> 1.4)
     orm_adapter (0.5.0)
     pg (1.5.4)
+    phantomjs (2.1.1.0)
     poltergeist (1.18.1)
       capybara (>= 2.1, < 4)
       cliver (~> 0.3.1)
@@ -343,6 +344,7 @@ DEPENDENCIES
   jbuilder
   jquery-rails
   pg (~> 1.1)
+  phantomjs
   poltergeist
   popper_js (~> 2.11.6)
   puma (>= 5.0)
