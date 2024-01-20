@@ -1,12 +1,1 @@
-<div class="col-sm-3 single-post-card" id=<%= post_path(post.id) %>>
-  <div class="card">
-    <div class="card-block">
-      <h4 class="post-text">
-        <%= truncate(post.title, :length => 60) %>
-      </h4>
-        <div><i> Posted by <%= post.user.name %></i></div>
-        <p><%= post.content %></p>
-        <%= link_to "I'm interested", post_path(post.id), class: 'btn btn-primary' %>
-    </div>
-  </div><!-- card -->
-</div><!-- col-sm-3 -->
+<%= render post_format_partial_path, post: post %>
