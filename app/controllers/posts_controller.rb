@@ -13,12 +13,13 @@ class PostsController < ApplicationController
       def team
         posts_for_branch(params[:action])
       end 
-  private
 
+  private
   def posts_for_branch(branch)
     @categories = Category.where(branch: branch)
     @posts = get_posts.paginate(page: params[:page])
-  end  
+  end 
+   
   def get_posts
     Post.limit(30)
   end
