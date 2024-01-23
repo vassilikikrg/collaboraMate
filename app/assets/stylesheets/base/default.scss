@@ -32,3 +32,7 @@
   .control-label {
     display: none;
   }
+  .login-button, .sign-up-button {
+    background-color: $navbarColor;
+    color: white !important;
+  }

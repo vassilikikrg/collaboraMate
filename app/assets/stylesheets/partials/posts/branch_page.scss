@@ -1,0 +1,94 @@
+.single-post-list {
+    min-height: 50px;
+    max-height: 50px;
+    padding: 15px 20px 15px 0;
+    margin: 0 15px;
+    border-bottom: solid 2px rgba(0, 0 , 0, 0.1);
+    border-bottom-right-radius: 15%;
+    transition: border-color 0.2s;
+    overflow: hidden;
+    &:hover {
+        cursor: pointer;
+        border-color: $navbarColor; /* Change border color on hover */
+    }
+}
+  .page-title {
+    margin: 30px 0;
+    text-align: center;
+    background-color: white !important;
+    font-weight: bold;
+    a {
+      color: black;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .categories-list {
+    margin: 10px 0;
+    padding: 0;
+  }
+  
+  .category-item {
+    display: inline-block;
+    margin: 15px 0;
+    a {
+      font-size: 16px;
+      font-size: 1.6rem;
+      color: rgba(0,0,0,0.7);
+      border: solid 2px rgba(0,0,0,0.4);
+      border-radius: 8%;
+      padding: 10px;
+    }
+    a:hover, .selected-item {
+      background: $navbarColor;
+      color: white;
+      border: solid 2px white;
+      border-radius: 0px;
+    }
+  }
+  
+  .new-post-button-parent {
+    text-align: right;
+    span {
+      font-size: 12px;
+      font-size: 1.2rem;
+    }
+  }
+  
+  .new-post-button {
+    display: inline-block;
+    background: $navbarColor;
+    color: white;
+    padding: 8px;
+    border-radius: 10px;
+    font-weight: bold;
+    border: solid 2px $navbarColor;
+    margin: 10px 0;
+    &:hover, &:active, &:focus {
+      background: white;
+      color: black;
+    }
+  }
+  
+  .login-branch {
+    margin: 10px 0;
+  }
+  
+  .login-button-branch {
+    padding: 5px 10px;
+    border-radius: 10px;
+    &:hover, &:active, &:visited, &:link {
+      color: white;
+    }
+  }
+  
+  #branch-main-content {
+    background: white;
+    height: calc(100vh - 50px);
+  }
+  
+  #feed {
+    background-color: white;
+  }
