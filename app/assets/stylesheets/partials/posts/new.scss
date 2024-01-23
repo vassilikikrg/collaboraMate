@@ -1,0 +1,33 @@
+/* Style for the container */
+.container.new-post {
+    margin-top: 20px;
+  }
+  
+  /* Style for the form */
+  form {
+    background-color: #f8f9fa; /* Light gray background */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft box shadow */
+  }
+  
+  /* Style for the form fields */
+  .form-control {
+    margin-bottom: 15px;
+  }
+  
+  /* Style for the submit button */
+  form input[type="submit"] {
+    background-color: $navbarColor; /* Blue color for the button */
+    color: #fff; /* White text color */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue color on hover */
+  }
+  
