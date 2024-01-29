@@ -84,3 +84,5 @@ gem 'popper_js', '~> 2.11.6'
 gem 'bootstrap_form'
 
 gem 'devise'
+
+gem 'gon'
