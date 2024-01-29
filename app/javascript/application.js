@@ -2,6 +2,7 @@
 import "@hotwired/turbo-rails"
 import "controllers"
 import "conversations/position_and_visibility"
+import "conversations/toggle_window"
 import "jquery"
 import "jquery_ujs"
 
