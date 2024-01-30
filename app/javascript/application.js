@@ -8,3 +8,4 @@ import "jquery_ujs"
 
 import "popper"
 import "bootstrap"
+import "channels"

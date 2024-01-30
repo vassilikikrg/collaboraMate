@@ -13,3 +13,5 @@ pin "bootstrap", to: 'bootstrap.min.js', preload: true
 pin_all_from "app/javascript/controllers", under: "controllers"
 pin_all_from "app/javascript/posts", under: "posts"
 pin_all_from "app/javascript/conversations", under: "conversations"
+pin "@rails/actioncable", to: "actioncable.esm.js"
+pin_all_from "app/javascript/channels", under: "channels"
