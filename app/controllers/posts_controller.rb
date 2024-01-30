@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  include PostsHelper
   # do not allow not signed in users to have an access to create post page
   before_action :redirect_if_not_signed_in, only: [:new] 
     def show
