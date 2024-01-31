@@ -3,6 +3,9 @@ import "@hotwired/turbo-rails"
 import "controllers"
 import "conversations/position_and_visibility"
 import "conversations/toggle_window"
+import "conversations/conversation"
+import "conversations/messages_infinite_scroll"
+
 import "jquery"
 import "jquery_ujs"
 

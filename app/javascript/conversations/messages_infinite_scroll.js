@@ -1,3 +1,4 @@
+import "jquery"
 $(document).on('turbolinks:load ajax:complete', function() {
     var iScrollPos = 0;
     var isLoading = false;

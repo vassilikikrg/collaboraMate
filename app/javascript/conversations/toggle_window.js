@@ -1,3 +1,5 @@
+import "jquery"
+
 $(document).on('turbolinks:load', function() { 
 
     // when conversation heading is clicked, toggle conversation

@@ -1,3 +1,5 @@
+import "jquery"
+
 $(document).on('turbolinks:load', function() { 
     
     // leave a gap at the top of the conversation windows' scrollbar
