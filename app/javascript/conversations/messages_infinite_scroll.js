@@ -1,5 +1,7 @@
 import "jquery"
-$(document).on('turbolinks:load ajax:complete', function() {
+// $(document).on('turbolinks:load ajax:complete', function() {
+$(document).on('turbo:load ajax:complete', function() {
+
     var iScrollPos = 0;
     var isLoading = false;
     var currentLoadingIcon;
