@@ -14,6 +14,11 @@ class Private::Conversation < ApplicationRecord
        where(sender_id: user2_id, recipient_id: user1_id)
      )
     end
+
+    scope :all_by_user, -> (user_id) do
+      where(recipient_id: user_id).or(where(sender_id: user_id))
+    end
+    
     # find the other meber of the conversation  
     def opposed_user(user)
       user == recipient ? sender : recipient

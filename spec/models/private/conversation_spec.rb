@@ -18,3 +18,14 @@ context 'Scopes' do
       expect(opposed_user).to eq user2
     end
   end
+
+  context 'Scopes' do
+    it "gets all user's conversations" do
+      create_list(:private_conversation, 5)
+      user = create(:user)
+      create_list(:private_conversation, 2, recipient_id: user.id)
+      create_list(:private_conversation, 2, sender_id: user.id)
+      conversations = Private::Conversation.all_by_user(user.id)
+      expect(conversations.count).to eq 4
+    end 
+  end
