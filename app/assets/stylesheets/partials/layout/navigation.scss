@@ -67,3 +67,88 @@ nav {
     color: white !important;
   }
 }
+
+.brand-mobile {
+  font-size: 20px;
+  font-size: 2.0rem;
+}
+
+.navigation-items {
+  position: absolute;
+  top: 0;
+  left: 50%;
+}
+
+.navbar-header {
+  .open {
+    width: 36px;
+  }
+}
+
+.non-user-nav-links {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  vertical-align: middle;
+  padding-right: 20px;
+}
+
+#conversations-menu, #contacts-requests {
+  font-size: 20px;
+  font-size: 2.0rem;
+  height: 50px;
+  line-height: 50px;
+  padding-right: 10px;
+
+  ul {
+    margin: 0;
+    position: relative;
+    top: 50px;
+    right: 200px;
+    border-radius: 0 0 5px 5px;
+    height: 300px;
+    overflow: scroll;
+    overflow-x: hidden;
+    li {
+      a {
+        width: 100%;
+      }
+    }
+  }
+  .unseen-conv {
+    a {
+      background: $backgroundColor;
+      color: black !important;
+    }
+  }
+}
+
+#unseen-conversations, #unresponded-contact-requests {
+  visibility: hidden;
+  padding: 1px;
+  position: absolute;
+  // color: white;
+  font-size: 13px;
+  font-size: 1.3rem;
+}
+
+#unseen-conversations {
+  right: 5px;
+  background: #E92F2F;
+}
+
+#conversations-menu {
+  i {
+    position: relative;
+  }
+}
+
+#conversations-list {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  .col-sm-2 {
+    padding: 0;
+  }
+}
