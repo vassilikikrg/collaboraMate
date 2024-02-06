@@ -53,7 +53,11 @@ consumer.subscriptions.create("PrivateConversationChannel", {
     return this.perform('send_message', {
         message: message
     });
+  },
+  set_as_seen: function(conv_id) {
+    return this.perform('set_as_seen', { conv_id: conv_id });
   }
+  
 });
 
 $(document).on('submit', '.send-private-message', function(e) {
@@ -61,4 +65,27 @@ $(document).on('submit', '.send-private-message', function(e) {
   var values = $(this).serializeArray();
   App.private_conversation.send_message(values);
   $(this).trigger('reset');
+});
+
+$(document).on('click', '.conversation-window, .private-conversation', function(e) {
+  // if the last message in a conversation is not a user's message and is unseen
+  // mark unseen messages as seen
+  var latest_message = $('.messages-list ul li:last .row div', this);
+  if (latest_message.hasClass('message-received') && latest_message.hasClass('unseen')) {
+      var conv_id = $(this).find('.panel').attr('data-pconversation-id');
+      // if conv_id doesn't exist, it means that conversation is opened in messenger
+      if (conv_id == null) {
+          var conv_id = $(this).find('.messages-list').attr('data-pconversation-id');
+      }
+      // mark conversation as seen in conversations menu list
+      latest_message.removeClass('unseen');
+      $('#menu-pc' + conv_id).removeClass('unseen-conv');
+      calculateUnseenConversations();
+      App.private_conversation.set_as_seen(conv_id);
+  }
+});
+
+// $(document).on('turbolinks:load', function() {
+$(document).on('turbo:load', function() {
+  calculateUnseenConversations();
 });
