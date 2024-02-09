@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :contacts, only: [:create, :update, :destroy]
+  
   devise_for :users, :controllers => {:registrations => "registrations"}
   
   devise_scope :user do
