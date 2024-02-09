@@ -1,4 +1,5 @@
 import consumer from "channels/consumer"
+import { calculateUnseenConversations } from '../conversations/conversation.js';
 
 consumer.subscriptions.create("PrivateConversationChannel", {
   connected() {
