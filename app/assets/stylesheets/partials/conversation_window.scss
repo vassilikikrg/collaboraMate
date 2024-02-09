@@ -158,3 +158,83 @@ textarea {
   .send-message {
     display: none;
   }
+
+  .add-user-to-contacts {
+    display: none;
+    i {
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    &:hover {
+      color: white;
+    }
+  }
+  
+  .add-user-to-contacts-message {
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .add-people-to-chat, .contact-request-sent {
+    display: none;
+    margin: 0;
+    padding: 0;
+    div {
+      width: 40px;
+      height: 40px;
+      display: table;
+      i {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+  }
+  
+  .add-people-to-chat {
+    i {
+      opacity: 0.8;
+      transition: opacity 0.15s;
+    }
+    &:hover i {
+      opacity: 1;
+    }
+  }
+  
+  .contact-request-status {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 400px;
+    text-align: center;
+    background-color: white;
+    z-index: 2;
+    .pending-request {
+      padding: 10px 0;
+    }
+    .request-response {
+      padding: 10px 0;
+    }
+    .accept-request, .decline-request {
+      a {
+        padding: 10px 0;
+      }
+    }
+    .contact-name {
+      padding: 10px 0 0 0;
+    }
+    .accept-request {
+      margin-right: 10px;
+      a {
+        color: green;
+      }
+    }
+    .decline-request {
+      a {
+        font-weight: bold;
+        color: red;
+      }
+    }
+  }
