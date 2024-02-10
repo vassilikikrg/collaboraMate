@@ -10,8 +10,8 @@ $(document).on('turbo:load', function() {
         e.preventDefault();
         var panel = $(this).parent();
         var panel_body = panel.find('.panel-body');
-        var messages_list = panel.find('.messages-list');
-
+        var messages_list = panel.find('.messages-list');     
+        var conversation_heading ;       
         panel_body.toggle(100, function() {
             var messages_visible = $('ul', this).has('li').length;
 
