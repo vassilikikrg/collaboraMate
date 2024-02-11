@@ -1,0 +1,2 @@
+module Group::MessagesHelper
+end
