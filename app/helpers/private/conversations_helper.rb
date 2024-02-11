@@ -66,32 +66,46 @@ def add_to_contacts_partial_path(contact)
 
     # show an unaccepted contact request's status if any
     def unaccepted_contact_request_partial_path(contact)
-    if unaccepted_contact_exists(contact) 
-        if request_sent_by_user(contact)
-        "private/conversations/conversation/request_status/sent_by_current_user"  
-        else
-        "private/conversations/conversation/request_status/sent_by_recipient" 
-        end
-    else
-        'shared/empty_partial'
-    end
+      if unaccepted_contact_exists(contact) 
+          if request_sent_by_user(contact)
+          "private/conversations/conversation/request_status/sent_by_current_user"  
+          else
+          "private/conversations/conversation/request_status/sent_by_recipient" 
+          end
+      else
+          'shared/empty_partial'
+      end
     end
 
     # show a link to send a contact request
     # if an opposite user is not in contacts and no requests exist
     def not_contact_no_request_partial_path(contact)
-    if recipient_is_contact? == false && unaccepted_contact_exists(contact) == false
-        "private/conversations/conversation/request_status/send_request"
-    else
-        'shared/empty_partial'
-    end
+      if recipient_is_contact? == false && unaccepted_contact_exists(contact) == false
+          "private/conversations/conversation/request_status/send_request"
+      else
+          'shared/empty_partial'
+      end
     end
 
     private
 
     def request_sent_by_user(contact)
-    # true if contact request was sent by the current_user 
-    # false if it was sent by a recipient
-    contact['user_id'] == current_user.id
+      # true if contact request was sent by the current_user 
+      # false if it was sent by a recipient
+      contact['user_id'] == current_user.id
+    end
+
+    def contacts_except_recipient(recipient)
+      contacts = current_user.all_active_contacts
+      # return all contacts, except the opposite user of the chat
+      contacts.delete_if {|contact| contact.id == recipient.id }
+    end
+
+    def create_group_conv_partial_path(contact)
+      if recipient_is_contact?
+        'private/conversations/conversation/heading/create_group_conversation'
+      else
+        'shared/empty_partial'
+      end
     end
 end
