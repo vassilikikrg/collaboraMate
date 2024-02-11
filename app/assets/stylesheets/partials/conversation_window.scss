@@ -238,3 +238,34 @@ textarea {
       }
     }
   }
+
+  .select-users-to-chat {
+    padding: 5px 0 5px 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 40px;
+    background-color: white;
+    display: none;
+    height: 45px;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  .select-users-dropdown, .select-users-button {
+    border: none;
+    display: inline-block;
+    margin: 0;
+    height: 35px;
+  }
+  
+  .select-users-dropdown {
+    width: 55%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  .select-users-button {
+    width: 40%;
+    background-color: $navbarColor;
+    color: white;
+    border: 1px solid $navbarColor;
+  }
