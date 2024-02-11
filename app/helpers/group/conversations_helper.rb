@@ -1,0 +1,2 @@
+module Group::ConversationsHelper
+end
