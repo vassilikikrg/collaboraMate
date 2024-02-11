@@ -11,4 +11,13 @@ module Group::ConversationsHelper
       end
       add_people_to_conv_list
     end
+
+    def load_group_messages_partial_path(conversation)
+      if conversation.messages.count > 0
+        'group/conversations/conversation/messages_list/load_messages'
+      else
+        'shared/empty_partial'
+      end
+    end
+    
   end
