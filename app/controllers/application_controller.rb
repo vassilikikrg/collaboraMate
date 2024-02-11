@@ -15,10 +15,13 @@ class ApplicationController < ActionController::Base
         if user_signed_in?
           # opened conversations
           session[:private_conversations] ||= []
+          session[:group_conversations] ||= []
           @private_conversations_windows = Private::Conversation.includes(:recipient, :messages)
-                                            .find(session[:private_conversations])
+                                               .find(session[:private_conversations])
+          @group_conversations_windows = Group::Conversation.find(session[:group_conversations])
         else
           @private_conversations_windows = []
+          @group_conversations_windows = []
         end
       end
 

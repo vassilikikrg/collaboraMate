@@ -8,10 +8,13 @@ describe OrderConversationsService do
       conversation1 = create(:private_conversation,
                               sender_id: user.id,
                               messages: [create(:private_message)])
-      conversation2 = create(:private_conversation,
+      conversation2 = create(:group_conversation,
+                              users: [user],
+                              messages: [create(:group_message)])
+      conversation3 = create(:private_conversation,
                               sender_id: user.id,
                               messages: [create(:private_message)])
-      conversations = [conversation2, conversation1]
+      conversations = [conversation3, conversation2, conversation1]
       expect(OrderConversationsService.new({user: user}).call).to eq conversations
     end
   end
