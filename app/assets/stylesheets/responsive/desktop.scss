@@ -1,4 +1,20 @@
 @media screen and (min-width: 767px) {
+
+  .messenger {
+    .col-sm-2 {
+      display: initial !important;
+    }
+    .col-sm-2, .col-sm-10 {
+      display: initial;
+    }
+    .conversation {
+      padding: 0 0 60px 0;
+      .conversation-details {
+        display: none;
+      }
+    }
+  }
+  
   // scrollbar styling
   ::-webkit-scrollbar-track
   {
