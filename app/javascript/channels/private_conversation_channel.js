@@ -1,7 +1,10 @@
-import consumer from "channels/consumer"
+import consumer from "channels/consumer";
 import { calculateUnseenConversations } from '../conversations/conversation.js';
+import { findConv } from './shared/conversation.js';
+import { ConvRendered } from './shared/conversation.js';
+import { ConvMessagesVisiblity } from './shared/conversation.js';
 
-consumer.subscriptions.create("PrivateConversationChannel", {
+const privateConversationSubscription = consumer.subscriptions.create("PrivateConversationChannel", {
   connected() {
     // Called when the subscription is ready for use on the server
   },
@@ -20,7 +23,7 @@ consumer.subscriptions.create("PrivateConversationChannel", {
     if (conversation_menu_link.length) {
         conversation_menu_link.prependTo('#conversations-menu ul');
     }
-    
+
     // set variables
     var conversation = findConv(data['conversation_id'], 'p');
     var conversation_rendered = ConvRendered(data['conversation_id'], 'p');
@@ -58,13 +61,13 @@ consumer.subscriptions.create("PrivateConversationChannel", {
   set_as_seen: function(conv_id) {
     return this.perform('set_as_seen', { conv_id: conv_id });
   }
-  
+
 });
 
 $(document).on('submit', '.send-private-message', function(e) {
   e.preventDefault();
   var values = $(this).serializeArray();
-  App.private_conversation.send_message(values);
+  privateConversationSubscription.send_message(values);
   $(this).trigger('reset');
 });
 
@@ -82,7 +85,7 @@ $(document).on('click', '.conversation-window, .private-conversation', function(
       latest_message.removeClass('unseen');
       $('#menu-pc' + conv_id).removeClass('unseen-conv');
       calculateUnseenConversations();
-      App.private_conversation.set_as_seen(conv_id);
+      privateConversationSubscription.set_as_seen(conv_id);
   }
 });
 

@@ -1,5 +1,5 @@
 // finds a conversation in the DOM
-function findConv(conversation_id, type) {
+export function findConv(conversation_id, type) {
     // if a current conversation is opened in the messenger
     var messenger_conversation = $('body .conversation');
     if (messenger_conversation.length) {
@@ -16,7 +16,7 @@ function findConv(conversation_id, type) {
 }
 
 // checks if a conversation window is rendered and visible on a browser
-function ConvRendered(conversation_id, type) {
+export function ConvRendered(conversation_id, type) {
     // if a current conversation is opened in the messenger
     if ($('body .conversation').length) {
         // conversation is opened in the messenger
@@ -32,7 +32,7 @@ function ConvRendered(conversation_id, type) {
     }
 }
 
-function ConvMessagesVisiblity(conversation) {
+export function ConvMessagesVisiblity(conversation) {
     // if current conversation is opened in the messenger
     if ($('body .conversation').length) {
         // conversation is opened in the messenger

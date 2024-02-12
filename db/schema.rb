@@ -43,8 +43,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_02_11_183224) do
   end
 
   create_table "group_messages", force: :cascade do |t|
+    t.string "content"
+    t.string "added_new_users"
+    t.string "seen_by"
+    t.bigint "user_id"
+    t.bigint "conversation_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_group_messages_on_conversation_id"
+    t.index ["user_id"], name: "index_group_messages_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
