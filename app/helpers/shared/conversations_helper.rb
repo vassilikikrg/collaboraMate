@@ -9,17 +9,20 @@ module Shared::ConversationsHelper
     end
 
     def group_conv_seen_status(conversation, current_user)
-      # if the current_user is nil, it means that the helper is called from the service
-      # return an empty string
-      if current_user == nil
-        ''
-      else
-        # if the last message of the conversation is not created by this user
-        # and is unseen, return an unseen-conv value
-        not_created_by_user = conversation.messages.last.user_id != current_user.id
-        seen_by_user = conversation.messages.last.seen_by.include? current_user.id
-        not_created_by_user && seen_by_user == false ? 'unseen-conv' : ''
-      end
-    end
+      # If there are no messages in the conversation, return an empty string
+      return '' if conversation.messages.empty?
     
+      if current_user.nil?
+        '' # Return an empty string if current_user is nil
+      else
+        last_message = conversation.messages.last
+        if last_message
+          not_created_by_user = last_message.user_id != current_user.id
+          seen_by_user = last_message.seen_by.include?(current_user.id)
+          not_created_by_user && !seen_by_user ? 'unseen-conv' : ''
+        else
+          '' # Return an empty string if last_message is nil
+        end
+      end
+    end   
   end

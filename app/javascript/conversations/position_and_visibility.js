@@ -1,8 +1,7 @@
 import "jquery"
 // $(document).on('turbolinks:load', function() { 
 $(document).on('turbo:load', function() { 
-    console.log("hello from the other side");
-    chat_windows_count = $('.conversation-window').length;
+    var chat_windows_count = $('.conversation-window').length;
     // if the last visible chat window is not set and conversation windows exist
     // set the last_visible_chat_window variable
     if (gon.last_visible_chat_window == null && chat_windows_count > 0) {
@@ -19,7 +18,7 @@ $(document).on('turbo:load', function() {
 });
 
 function positionChatWindows() {
-    chat_windows_count = $('.conversation-window').length;
+    var chat_windows_count = $('.conversation-window').length;
     // if a new conversation window was added, 
     // set it as the last visible conversation window
     // so the hideShowChatWindow function can hide or show it, 
@@ -31,7 +30,7 @@ function positionChatWindows() {
     }
 
     // when a new chat window is added, position it to the most left of the list
-    for (i = 0; i < chat_windows_count; i++ ) {
+    for (var i = 0; i < chat_windows_count; i++ ) {
         var right_position = i * 410;
         var chat_window = i + 1;
         $('.conversation-window:nth-of-type(' + chat_window + ')')

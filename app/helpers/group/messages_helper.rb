@@ -1,5 +1,4 @@
 module Group::MessagesHelper
-    require 'shared/messages_helper'
     include Shared::MessagesHelper
 
     def replace_link_to_group_messages_partial_path

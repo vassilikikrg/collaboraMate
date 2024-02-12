@@ -1,4 +1,4 @@
-for (i = 0; i < gon.group_conversations.length; i++) {
+for (var i = 0; i < gon.group_conversations.length; i++) {
   subToGroupConversationChannel(gon.group_conversations[i]);
 }
 

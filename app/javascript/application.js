@@ -5,7 +5,7 @@ import "conversations/position_and_visibility"
 import "conversations/toggle_window"
 import "conversations/conversation"
 import "conversations/messages_infinite_scroll"
-
+import "conversations/options"
 import "jquery"
 import "jquery_ujs"
 
