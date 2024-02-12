@@ -1,5 +1,6 @@
 import "jquery"
-$(document).on('turbolinks:load', function() { 
+// $(document).on('turbolinks:load', function() { 
+$(document).on('turbo:load', function() { 
     console.log("hello from the other side");
     chat_windows_count = $('.conversation-window').length;
     // if the last visible chat window is not set and conversation windows exist
