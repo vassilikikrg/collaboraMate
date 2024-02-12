@@ -32,4 +32,13 @@ module Shared::MessagesHelper
     end
   end
 
+  def append_previous_messages_partial_path
+    # if a conversation is opened in the messenger
+    if @is_messenger == 'true'
+      'shared/load_more_messages/messenger/append_messages' 
+    else 
+      'shared/load_more_messages/window/append_messages' 
+    end 
+  end
+
 end
