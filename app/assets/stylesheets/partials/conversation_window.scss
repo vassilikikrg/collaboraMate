@@ -238,3 +238,74 @@ textarea {
       }
     }
   }
+
+  .select-users-to-chat {
+    padding: 5px 0 5px 5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    position: absolute;
+    top: 40px;
+    background-color: white;
+    display: none;
+    height: 45px;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  .select-users-dropdown, .select-users-button {
+    border: none;
+    display: inline-block;
+    margin: 0;
+    height: 35px;
+  }
+  
+  .select-users-dropdown {
+    width: 55%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
+  
+  .select-users-button {
+    width: 40%;
+    background-color: $navbarColor;
+    color: white;
+    border: 1px solid $navbarColor;
+  }
+
+  .group-message {
+    padding: 0 10px;
+    word-wrap: break-word;
+    z-index: 1;
+    .row {
+      position: relative;
+    }
+    .hidden-item {
+      position: absolute; 
+      left: 0; 
+      vertical-align: middle;
+      line-height: 20px;
+      visibility: hidden;
+    }
+    .message-content {
+      margin-left: 40px;
+    }
+    &:hover {
+      background-color: rgb(250, 250, 250);
+    }
+    p {
+      margin: 0;
+    }
+    .message-author, .message-time {
+      font-size: 12px;
+      font-size: 1.2rem;
+    }
+    .message-author {
+      margin-left: 40px;
+      font-weight: bold;
+    }
+    .message-time {
+      padding-left: 2px;
+      color: rgba(0,0,0,0.5);
+    }
+    &:hover .message-time {
+      visibility: visible;
+    }
+  }

@@ -152,3 +152,71 @@ nav {
     padding: 0;
   }
 }
+#contacts-requests {
+  li {
+    color: black;
+    background-color: $backgroundColor;
+    border-bottom: 1px solid $navbarColor;
+  }
+  i {
+    position: relative;
+  }
+  .sixty-percent {
+    display: inline-block;
+    width: 60%;
+  }
+  .forty-percent {
+    display: inline-block;
+    float: right;
+    width: 40%;
+  }
+  .contact-request, .contact-request-responded {
+    .contact-name {
+      padding-left: 10px;
+      padding-right: 20px;
+    }
+    .accept-request, .decline-request {
+      a {
+        border: 2px solid $navbarColor;
+        padding: 5px;
+      }
+      &:hover a {
+        border-color: black;
+      }
+      transition: 0.15s border-color;
+      transition: 0.15s background-color;
+    }
+    .accept-request {
+      a:hover {
+        background-color: black !important;
+      }
+      a {
+        background-color: $navbarColor;
+        color: white !important;
+      }
+    }
+    .decline-request {
+      a {
+        background-color: $backgroundColor;
+        color: black !important;
+      }
+      a:hover, &:hover {
+        background-color: white !important;
+      }
+    }
+    .accepted-request {
+      background: $navbarColor;
+      color: white;
+      padding: 5px;
+    }
+  }
+  .no-requests {
+    text-align: center;
+  }
+}
+
+#unresponded-contact-requests {
+  top: 0;
+  right: 5px;
+  background: #3F4EBF;
+}

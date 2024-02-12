@@ -1,4 +1,5 @@
 module Private::MessagesHelper 
+  require 'shared/messages_helper'
   include Shared::MessagesHelper
 
   def private_message_date_check(message, previous_message)
