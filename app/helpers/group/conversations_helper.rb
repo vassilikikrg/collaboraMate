@@ -14,7 +14,7 @@ module Group::ConversationsHelper
 
     def load_group_messages_partial_path(conversation)
       if conversation.messages.count > 0
-        'group/conversations/conversation/messages_list/load_messages'
+        'group/conversations/conversation/messages_list/link_to_previous_messages'
       else
         'shared/empty_partial'
       end
