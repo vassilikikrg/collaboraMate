@@ -1,9 +1,5 @@
 <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"  data-target="#navbar-collapsible-content" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <%= link_to 'collaboraMate', root_path, class: 'navbar-brand' %>
-    </div>
+  <% nav_header_content_partials.each do |partial_path| %>
+    <%= render partial: partial_path %>
+  <% end %>
+</div><!-- navbar-header -->

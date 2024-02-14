@@ -1,8 +1,12 @@
 class PostsController < ApplicationController
+  include PostsHelper
   # do not allow not signed in users to have an access to create post page
   before_action :redirect_if_not_signed_in, only: [:new] 
     def show
         @post = Post.find(params[:id])
+        if user_signed_in?
+          @message_has_been_sent = conversation_exist?
+        end
     end
       def hobby
         posts_for_branch(params[:action])
@@ -49,5 +53,10 @@ class PostsController < ApplicationController
       branch: params[:action]
     }).call
   end
-   
+
+  def conversation_exist?
+    return false unless @post.present?
+    Private::Conversation.between_users(current_user.id, @post.user.id).present?
+  end
+  
 end

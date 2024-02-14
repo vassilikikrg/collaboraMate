@@ -3,6 +3,7 @@
   <head>
     <title>CollaboraMate</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= include_gon %>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,5 +14,7 @@
   <body>
     <%= render 'layouts/navigation' %>
     <%= yield %>
+    <%= render 'layouts/application/private_conversations_windows' %>
+    <%= render 'layouts/application/group_conversations_windows' %>
   </body>
 </html>

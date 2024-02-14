@@ -16,7 +16,8 @@ gem "puma", ">= 5.0"
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
-
+# Jquery 
+gem 'jquery-rails'
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
 
@@ -25,17 +26,6 @@ gem "stimulus-rails"
 
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
-
-# Bootstrap
-gem 'bootstrap-sass', '~> 3.4.1'
-gem 'sassc-rails', '>= 2.1.0'
-gem 'popper_js', '~> 2.11.6'
-gem 'bootstrap_form'
-#Jquery
-gem 'jquery-rails'
-
-gem 'devise'
-
 
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
@@ -86,3 +76,13 @@ group :test do
 end
 
 gem 'will_paginate', '~> 4.0'
+
+# Bootstrap
+gem 'bootstrap-sass', '~> 3.4.1'
+gem 'sassc-rails', '>= 2.1.0'
+gem 'popper_js', '~> 2.11.6'
+gem 'bootstrap_form'
+
+gem 'devise'
+
+gem 'gon'
