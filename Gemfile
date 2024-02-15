@@ -86,3 +86,8 @@ gem 'bootstrap_form'
 gem 'devise'
 
 gem 'gon'
+
+# auth
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection", "~> 1.0"

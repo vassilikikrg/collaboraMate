@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :contacts, only: [:create, :update, :destroy]
   
-  devise_for :users, :controllers => {:registrations => "registrations"}
+  devise_for :users, :controllers => {:registrations => "registrations", :omniauth_callbacks => 'users/omniauth_callbacks',
+  :sessions => 'users/sessions',}
   
   devise_scope :user do
     get 'login', to: 'devise/sessions#new'
