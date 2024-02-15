@@ -20,9 +20,18 @@
         <%= f.password_field :password_confirmation, 
                               placeholder: 'password confirmation', 
                               class: 'form-control' %>
-        <%= f.submit 'Sign up', class: 'btn sign-up-button' %>
+        <%= f.submit 'Sign up', class: 'btn sign-up-button' %> <br></br>
       <% end %>
-		
+      <%- if devise_mapping.omniauthable? %>
+        <%- resource_class.omniauth_providers.each do |provider| %>
+          <%= form_for "Login",
+            url: omniauth_authorize_path(resource_name, provider), 
+            method: :post,
+            data: {turbo: "false"} do |f| %>
+              <%= f.submit "Login", type: "image", src: url_for("/assets/web_light_rd_ctn@1x.png") %>
+          <% end %>
+        <% end %>
+        <% end %>
     </div>
   </div>
 </div>

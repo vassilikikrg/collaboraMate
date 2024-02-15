@@ -22,19 +22,22 @@
   <% end -%>
 
    <%= f.submit "Log in", class: 'form-control login-button' %>
+   <div style="text-align: center;">
 <% end %>
-    </div>
-   </div> 
-   <%- if devise_mapping.omniauthable? %>
-  <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= form_for "Login",
-      url: omniauth_authorize_path(resource_name, provider), 
-      method: :post,
-      data: {turbo: "false"} do |f| %>
-        <%= f.submit "Login", type: "image", src: url_for("/assets/web_light_rd_ctn@1x.png") %>
+<% if devise_mapping.omniauthable? %>
+    <% resource_class.omniauth_providers.each do |provider| %>
+      <%= form_for "Login",
+        url: omniauth_authorize_path(resource_name, provider), 
+        method: :post,
+        data: {turbo: "false"} do |f| %>
+          <%= f.submit "Login", type: "image", src: url_for("/assets/web_light_rd_ctn@1x.png") %>
+      <% end %>
     <% end %>
   <% end %>
-  <% end %>
+</div>
+    </div>
+   </div> 
+
 </div>
 
 

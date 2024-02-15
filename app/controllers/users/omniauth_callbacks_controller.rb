@@ -10,7 +10,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def google_oauth2
     auth = request.env['omniauth.auth'] # Retrieve the auth hash from the request
-
     user = User.from_omniauth(auth)
 
     if user.present?
