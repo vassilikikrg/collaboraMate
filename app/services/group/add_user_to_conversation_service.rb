@@ -4,6 +4,7 @@ class Group::AddUserToConversationService
       @group_conversation_id = params[:group_conversation_id]
       @new_user_id = params[:new_user_id]
       @added_by_id = params[:added_by_id]
+      puts "group_conversation_id ID: #{@group_conversation_id}"
     end
   
     def call
@@ -22,7 +23,7 @@ class Group::AddUserToConversationService
         user_id: added_by.id, 
         content: '' + new_user.name + ' added by ' + added_by.name, 
         added_new_users: [new_user.id], 
-        group_conversation_id: @group_conversation_id)
+        conversation_id: @group_conversation_id)
       if message.save
         Group::MessageBroadcastJob.perform_later(message, nil, nil)
       end
